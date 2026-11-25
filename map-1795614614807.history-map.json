@@ -1725,14 +1725,15 @@
       "id": "map-6f99b549-00d9-43d1-9913-eeca30856a18",
       "properties": {
         "kind": "tertiary",
-        "name": "",
+        "name": "後花樓正街",
         "visible": true,
         "widthScale": 1,
         "bridge": false,
         "tunnel": false,
         "notes": "",
         "tags": {
-          "highway": "tertiary"
+          "highway": "tertiary",
+          "name": "後花樓正街"
         },
         "cornerRadius": 300,
         "presetId": ""
@@ -1816,12 +1817,12 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T14:58:38.381Z",
+  "updatedAt": "2026-11-25T14:58:53.361Z",
   "view": {
     "center": [
-      114.28404133278605,
-      30.574985132948612
+      114.28607230243699,
+      30.577383972134697
     ],
-    "zoom": 15.442352689938916
+    "zoom": 15.727618870227749
   }
 }
