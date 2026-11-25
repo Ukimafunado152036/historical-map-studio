@@ -2088,8 +2088,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          114.28908075136769,
-          30.57162452895956
+          114.28908543684406,
+          30.57158501417554
         ]
       }
     },
@@ -2113,8 +2113,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          114.2893771263698,
-          30.57217133550195
+          114.28936179174616,
+          30.572053682770544
         ]
       }
     },
@@ -2217,14 +2217,114 @@
           30.57132180831063
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-f46dcce8-fe4f-417d-99cd-486db5303df6",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "民生路碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "民生路碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29127115283893,
+          30.575521759959216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "map-ba8c9383-b1b6-4a3a-b9c6-ed9ba23b15fd",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "周家巷碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "周家巷碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29033322087298,
+          30.57385623309787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "map-12dfd60c-2ff7-4afb-a4cc-e69bd048d2a4",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "招商碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "招商碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29077706359402,
+          30.574670974889912
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "map-ac848029-29e4-44fc-b70d-0a6ef9b6ebe5",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "寧紹碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "寧紹碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.28966867499076,
+          30.572553604076163
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:16:36.766Z",
+  "updatedAt": "2026-11-25T15:19:37.792Z",
   "view": {
     "center": [
-      114.2879689343547,
-      30.571237786038537
+      114.28986966037178,
+      30.573678393664906
     ],
-    "zoom": 17.39976451353691
+    "zoom": 16.35743739290735
   }
 }
