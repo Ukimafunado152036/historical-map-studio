@@ -1440,7 +1440,34 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-0de72278-c27e-41ff-bd9d-e1e2e7557b53",
+      "properties": {
+        "kind": "tertiary",
+        "name": "惠民坊巷",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1,
+        "cornerRadius": 10
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.85797445765468,
+            32.01831658162696
+          ],
+          [
+            120.85952465120135,
+            32.018611749088606
+          ]
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T04:20:00.012Z"
+  "updatedAt": "2026-11-25T04:21:12.854Z"
 }
