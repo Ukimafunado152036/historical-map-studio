@@ -1429,14 +1429,15 @@
       "id": "map-486bcd02-b43a-416f-89f0-6b9887a270dd",
       "properties": {
         "kind": "tertiary",
-        "name": "",
+        "name": "府東四路",
         "visible": true,
         "widthScale": 1.25,
         "bridge": false,
         "tunnel": false,
         "notes": "",
         "tags": {
-          "highway": "tertiary"
+          "highway": "tertiary",
+          "name": "府東四路"
         },
         "cornerRadius": 300,
         "presetId": ""
@@ -1484,14 +1485,15 @@
       "id": "map-9c749f72-c13c-4759-b8db-8c5e1cd59ab3",
       "properties": {
         "kind": "tertiary",
-        "name": "",
+        "name": "民生路",
         "visible": true,
         "widthScale": 1.25,
         "bridge": false,
         "tunnel": false,
         "notes": "",
         "tags": {
-          "highway": "tertiary"
+          "highway": "tertiary",
+          "name": "民生路"
         },
         "cornerRadius": 300,
         "presetId": ""
@@ -1567,12 +1569,12 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T14:47:04.383Z",
+  "updatedAt": "2026-11-25T14:47:40.466Z",
   "view": {
     "center": [
-      114.28322420877464,
-      30.57994300587187
+      114.27160566727468,
+      30.584548848512526
     ],
-    "zoom": 18.37619389750507
+    "zoom": 13.618166504617832
   }
 }
