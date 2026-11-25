@@ -1622,7 +1622,7 @@
       "type": "Feature",
       "id": "map-abb5ac5c-a323-4ba6-b172-1f2ef50e1944",
       "properties": {
-        "kind": "military",
+        "kind": "religious_area",
         "name": "南通縣政府",
         "notes": "",
         "visible": true,
@@ -1631,7 +1631,7 @@
         "widthScale": 1,
         "tags": {
           "name": "南通縣政府",
-          "landuse": "military"
+          "landuse": "religious"
         },
         "presetId": ""
       },
@@ -3557,12 +3557,12 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T13:39:23.839Z",
+  "updatedAt": "2026-11-25T13:39:44.234Z",
   "view": {
     "center": [
-      120.85951704892898,
-      32.022688502022305
+      120.8607731804841,
+      32.0215934992662
     ],
-    "zoom": 15.31951751293214
+    "zoom": 16.361844633561734
   }
 }
