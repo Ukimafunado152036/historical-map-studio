@@ -3458,7 +3458,34 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-59431755-f89c-4ac0-93d3-7a2f2f344e48",
+      "properties": {
+        "kind": "primary",
+        "name": "木行橋",
+        "notes": "",
+        "visible": true,
+        "bridge": true,
+        "tunnel": false,
+        "widthScale": 1.25,
+        "cornerRadius": 100
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.84813367527835,
+            32.015293509008984
+          ],
+          [
+            120.84822909674381,
+            32.01510376260647
+          ]
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T06:46:01.785Z"
+  "updatedAt": "2026-11-25T06:46:44.362Z"
 }
