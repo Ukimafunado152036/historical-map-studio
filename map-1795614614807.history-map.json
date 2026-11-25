@@ -2173,14 +2173,15 @@
       "id": "map-a0f37f16-82b3-4f11-8788-2e22dccf8b77",
       "properties": {
         "kind": "ferry_terminal",
-        "name": "",
+        "name": "嘉魚碼頭",
         "visible": true,
         "widthScale": 1,
         "bridge": false,
         "tunnel": false,
         "notes": "",
         "tags": {
-          "amenity": "ferry_terminal"
+          "amenity": "ferry_terminal",
+          "name": "嘉魚碼頭"
         },
         "presetId": ""
       },
@@ -2191,14 +2192,39 @@
           30.569893988185967
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-8b1fed02-cc4b-4301-8711-c24d23cfa573",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "道生碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "道生碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.28891227704594,
+          30.57132180831063
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:15:12.852Z",
+  "updatedAt": "2026-11-25T15:16:36.766Z",
   "view": {
     "center": [
-      114.28555729139862,
-      30.569716483798373
+      114.2879689343547,
+      30.571237786038537
     ],
-    "zoom": 16.64270357319613
+    "zoom": 17.39976451353691
   }
 }
