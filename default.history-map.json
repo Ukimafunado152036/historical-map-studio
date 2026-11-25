@@ -1,8 +1,8 @@
 {
   "app": "historical-map-studio",
   "version": 1,
-  "title": "我的历史地图",
-  "year": "",
+  "title": "南通州",
+  "year": "1935",
   "features": [
     {
       "type": "Feature",
@@ -1963,5 +1963,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T04:46:10.113Z"
+  "updatedAt": "2026-11-25T04:54:37.627Z"
 }
