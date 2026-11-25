@@ -12,14 +12,14 @@ const cities={杭州:[120.1551,30.2741],武汉:[114.3054,30.5931],南通:[120.86
 export function parseLocation(value){
  const v=String(value).trim();if(cities[v])return {center:cities[v],zoom:15};
  const hash=v.match(/#(?:map=)?(\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)/);
- if(hash){const c=[+hash[3],+hash[2]];if(coordinateOK(c)&&+hash[1]>=1&&+hash[1]<=20)return {center:c,zoom:+hash[1]};}
+ if(hash){const c=[+hash[3],+hash[2]];if(coordinateOK(c)&&+hash[1]>=1&&+hash[1]<=20)return {center:c,zoom:+hash[1]-(hash[0].startsWith('#map=')?1:0)};}
  const nums=v.split(/[,，\s]+/).map(Number);if(nums.length===2&&coordinateOK(nums))return {center:nums,zoom:16};
  throw new Error('请输入“经度,纬度”、上方城市名，或包含地图位置的 OSM 链接。');
 }
 export function mountHistoryEditor(workspace,{storeFactory}={}){
  document.body.className='history-editor';document.getElementById('map').hidden=false;
  const id='history-'+workspace.id,keys=workspaceKeys(id);
- let project=emptyHistory('我的历史地图'),prefs={reference:true,referenceType:'osm',opacity:.8,snap:true,lineRadius:30,areaRadius:0},rawBackup='';
+ let project=emptyHistory('我的历史地图'),prefs={reference:false,referenceType:'osm',opacity:.8,snap:true,lineRadius:30,areaRadius:0},rawBackup='';
  // Display preferences stay in this tab; project data is read from GitHub.
  prefs.opacity=Math.max(.1,Math.min(1,Number(prefs.opacity)||.8));prefs.referenceType=prefs.referenceType==='satellite'?'satellite':'osm';
  for(const k of ['lineRadius','areaRadius'])if(!Number.isFinite(+prefs[k])||+prefs[k]<0||+prefs[k]>200000)prefs[k]=k==='lineRadius'?30:0;
@@ -32,7 +32,8 @@ export function mountHistoryEditor(workspace,{storeFactory}={}){
  let view={center,zoom:14};
  if(prefs.view&&coordinateOK(prefs.view.center)&&Number.isFinite(prefs.view.zoom))view=prefs.view;
  try{if(location.hash)view=parseLocation(location.hash);}catch{}
- let map;try{map=new maplibregl.Map({container:'map',style:historyStyle(),...view,minZoom:2,maxZoom:20,attributionControl:false,dragRotate:false,pitchWithRotate:false,localIdeographFontFamily:"'Noto Sans CJK SC', 'Microsoft YaHei', 'PingFang SC', sans-serif"});}catch{throw new Error('绘图需要 WebGL。当前浏览器未能启用图形加速，请使用支持 WebGL 的 Edge / Chrome 打开。');}
+ const style=historyStyle(),pickLayers=style.layers.filter(l=>(l.source==='history'&&l.type!=='symbol')||l.id==='history-point-names').map(l=>l.id);
+ let map;try{map=new maplibregl.Map({container:'map',style,...view,minZoom:2,maxZoom:20,attributionControl:false,dragRotate:false,pitchWithRotate:false,localIdeographFontFamily:"'Noto Sans CJK SC', 'Microsoft YaHei', 'PingFang SC', sans-serif"});}catch{throw new Error('绘图需要 WebGL。当前浏览器未能启用图形加速，请使用支持 WebGL 的 Edge / Chrome 打开。');}
  window.__historyMap=map;map.touchZoomRotate.disableRotation();map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-right');map.addControl(new maplibregl.ScaleControl({unit:'metric'}),'bottom-right');map.addControl(new maplibregl.AttributionControl({compact:false}),'bottom-right');
  document.body.insertAdjacentHTML('beforeend',`
   <header id="hm-header"><button class="hm-home" data-hm="home">打开项目</button><div class="hm-heading"><strong>历史地图绘图台</strong><span>GitHub 云端项目</span></div><div class="hm-header-actions"><button data-hm="locate">定位地点</button><button id="hm-reference" class="hm-reference" data-hm="reference" aria-pressed="false">显示现实地图</button><button data-hm="cloud-save" id="hm-cloud-save">保存到 GitHub</button><button data-hm="storage">GitHub 项目</button></div></header>
@@ -82,7 +83,7 @@ export function mountHistoryEditor(workspace,{storeFactory}={}){
   else if(item())panel.innerHTML=inspector(item());
   else if(tab==='draw')panel.innerHTML=`<p class="hm-caption">选择要绘制的类型</p>${KINDS[kind].geometry!=='Point'?cornerControl(KINDS[kind].geometry==='LineString'?+prefs.lineRadius:+prefs.areaRadius,'new'):''}<div class="hm-kind-groups">${['道路','交通','水系','区域','建筑','标注'].map(group=>`<section><h3>${group}</h3><div>${Object.entries(KINDS).filter(([,v])=>v.group===group).map(([k,v])=>`<button class="hm-kind" data-kind="${k}" aria-pressed="${kind===k}"><i class="${v.geometry==='Polygon'?'area':v.geometry==='Point'?'point':'line'}" style="--swatch:${v.fill};--stroke:${v.stroke}"></i>${v.name}</button>`).join('')}</div></section>`).join('')}</div><button class="hm-primary hm-start" data-hm="start">绘制${KINDS[kind].name}</button><p class="hm-help">开启右上角“现实地图”对照着画；关闭后查看自己的地图。建筑和区域会自动闭合。</p>`;
   else if(tab==='list')panel.innerHTML=project.features.length?`<div class="hm-feature-list">${project.features.slice().reverse().map(f=>`<div><button data-feature="${escape(f.id)}"><i style="--swatch:${KINDS[f.properties.kind].fill}"></i><span>${escape(f.properties.name||KINDS[f.properties.kind].name)}<small>${KINDS[f.properties.kind].name}</small></span></button><button class="hm-visible" data-visible="${escape(f.id)}" aria-label="${f.properties.visible?'隐藏':'显示'}要素">${f.properties.visible?'显示中':'已隐藏'}</button></div>`).join('')}</div>`:'<div class="hm-empty"><h2>从一条街道开始</h2><p>你画的道路、河流、建筑和地名都会列在这里。</p><button data-hm="draw-tab">开始绘制</button></div>';
-  else panel.innerHTML=`<h2>参照与绘图</h2><label class="hm-check"><input id="hm-snap" type="checkbox" ${prefs.snap?'checked':''}>吸附到自己画的节点</label><p class="hm-help">邻近节点自动对齐，便于连接街道和共用区域边界。</p><button data-hm="reference">${prefs.reference?'关闭':'显示'}现实地图</button><p class="hm-help">可在顶部调节参照透明度，或按住空格临时查看。参照关闭后，保留真实水陆与自然植被。</p><div class="hm-note"><strong>OSM 式样即时试绘</strong><p>配色取自 OpenStreetMap Carto；当前使用浏览器绘制，尚未接入原版 Mapnik 渲染后台。</p></div><p class="hm-help">自然水陆来自当前地图。需要修改旧时岸线时，可画“水面”补水，或画“陆地 / 填水区域”覆盖现有水面。</p><button data-hm="storage">管理 GitHub 云端项目</button><button data-hm="export">导出项目 / GeoJSON</button>`;
+  else panel.innerHTML=`<h2>参照与绘图</h2><label class="hm-check"><input id="hm-snap" type="checkbox" ${prefs.snap?'checked':''}>吸附到自己画的节点</label><p class="hm-help">邻近节点自动对齐，便于连接街道和共用区域边界。</p><button data-hm="reference">${prefs.reference?'关闭':'显示'}现实地图</button><p class="hm-help">可在顶部调节参照透明度，或按住空格临时查看。参照关闭后，保留真实水陆与自然植被。</p><div class="hm-note"><strong>OSM 式样即时试绘</strong><p>道路宽度、描边、水系与标注按 OpenStreetMap Carto 规则适配。当前仍由浏览器渲染，未接入原版 Mapnik；关闭现实参照查看自绘成图。</p></div><p class="hm-help">自然水陆来自当前地图。需要修改旧时岸线时，可画“水面”补水，或画“陆地 / 填水区域”覆盖现有水面。</p><button data-hm="storage">管理 GitHub 云端项目</button><button data-hm="export">导出项目 / GeoJSON</button>`;
   const bar=$('#hm-drawing');bar.hidden=!drawing;if(drawing)bar.innerHTML=`<strong>${KINDS[drawing.kind].name} · ${drawing.coordinates.length} 个点</strong><span>单击落点 · Enter 完成 · Esc 取消</span><button data-hm="finish">完成</button><button data-hm="cancel">取消</button>`;
   storageStatus();
  }
@@ -150,7 +151,7 @@ export function mountHistoryEditor(workspace,{storeFactory}={}){
    if(KINDS[drawing.kind].geometry==='Polygon'&&drawing.coordinates.length>=3){const a=map.project(drawing.coordinates[0]),b=map.project(at);if(Math.hypot(a.x-b.x,a.y-b.y)<10){finish();return;}}
    if(!equal(drawing.coordinates.at(-1),at))drawing.coordinates.push(at);render();draw();return;
   }
-  const found=map.queryRenderedFeatures(e.point,{layers:['history-areas','history-line-casings','history-lines','history-rail','history-points','history-point-names']});selected=found[0]?.properties?.fid||null;editing=false;render();draw();
+  const found=map.queryRenderedFeatures(e.point,{layers:pickLayers});selected=found[0]?.properties?.fid||null;editing=false;render();draw();
  });
  map.on('dblclick',e=>{if(drawing){e.preventDefault?.();finish();}});
  map.on('mousemove',e=>{if(!drawing||Date.now()-lastMove<30)return;lastMove=Date.now();hover=snap(canonical(e.lngLat.lng,e.lngLat.lat));draw(true);});

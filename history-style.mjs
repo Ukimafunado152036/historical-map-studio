@@ -1,6 +1,7 @@
 import {KINDS} from './history-model.mjs';
 import {junctions,roundedFeature} from './corner-geometry.mjs';
-// Colours follow openstreetmap-carto, CC0: github.com/openstreetmap-carto/openstreetmap-carto.
+import {roadWidth,waterWidth,ROAD_KINDS,WATER_KINDS,namesFromZoom,cartoCameraLayer} from './osm-carto-rules.mjs';
+// Cartographic rules adapted from openstreetmap-carto (CC0), including zoom tables.
 // This browser preview is a MapLibre implementation, not the Mapnik renderer.
 export const OSM_REFERENCE='https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 export const NATURAL_SOURCE='https://tiles.openfreemap.org/planet';
@@ -9,27 +10,36 @@ const match=(key,fallback)=>['match',['get','kind'],...Object.entries(KINDS).fla
 const width=extra=>['interpolate',['linear'],['zoom'],8,['*',['get','weight'],.08],12,['+',['*',['get','weight'],.24],extra],17,['+',['get','weight'],extra],20,['+',['*',['get','weight'],2.2],extra]];
 export function historyStyle(){
  const line=['==',['geometry-type'],'LineString'],poly=['==',['geometry-type'],'Polygon'],point=['==',['geometry-type'],'Point'];
- const road=['in',['get','kind'],['literal',Object.keys(KINDS).filter(k=>KINDS[k].group==='道路')]];
- const notRail=['!=',['get','kind'],'rail'];
+ const road=['in',['get','kind'],['literal',ROAD_KINDS]],water=['in',['get','kind'],['literal',WATER_KINDS]],landuse=['in',['get','kind'],['literal',['housing','industrial','farmland']]],building=['==',['get','kind'],'building'];
+ const colors=part=>['step',['zoom'],['match',['get','kind'],...(part==='fill'?['motorway','#e66e89','trunk','#f6967a','primary','#f4c37d','secondary','#e7ed9d']:['motorway','#c24e6b','trunk','#d1684a','primary','#c78d2b','secondary','#a4b329']),part==='fill'?'#ffffff':'#b9b9b9'],12,match(part==='fill'?'fill':'stroke',part==='fill'?'#ffffff':'#b9b9b9')];
  const layers=[
   {id:'history-ground',type:'background',paint:{'background-color':'#f2efe9'}},
   {id:'natural-cover',type:'fill',source:'nature','source-layer':'landcover',filter:['in',['get','class'],['literal',['wood','grass','scrub','sand','ice']]],paint:{'fill-color':['match',['get','class'],'wood','#add19e','grass','#cdebb0','scrub','#c8d7ab','sand','#f5e9c6','ice','#ddecec','#f2efe9']}},
   {id:'natural-water',type:'fill',source:'nature','source-layer':'water',paint:{'fill-color':'#aad3df'}},
-  {id:'natural-waterways',type:'line',source:'nature','source-layer':'waterway',paint:{'line-color':'#aad3df','line-width':['interpolate',['linear'],['zoom'],8,.5,14,2,18,6]}},
+  {id:'natural-waterways',type:'line',source:'nature','source-layer':'waterway',minzoom:8,layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':'#aad3df','line-width':waterWidth('class')}},
   {id:'reference-osm',type:'raster',source:'reference',layout:{visibility:'none'},paint:{'raster-opacity':.8,'raster-fade-duration':0}},
   {id:'reference-satellite',type:'raster',source:'satellite',layout:{visibility:'none'},paint:{'raster-opacity':.8,'raster-fade-duration':0}},
-  {id:'history-areas',type:'fill',source:'history',filter:poly,layout:{'fill-sort-key':['get','order']},paint:{'fill-color':match('fill','#f2efe9'),'fill-opacity':1}},
-  {id:'history-area-outlines',type:'line',source:'history',filter:poly,paint:{'line-color':match('stroke','#b9b9b9'),'line-width':['interpolate',['linear'],['zoom'],12,.1,17,.7,20,1.2]}},
-  {id:'history-line-casings',type:'line',source:'history',filter:['all',line,road],layout:{'line-cap':'round','line-join':'round','line-sort-key':['get','order']},paint:{'line-color':match('stroke','#b9b9b9'),'line-width':width(1.5),'line-opacity':['case',['get','tunnel'],.55,1]}},
-  {id:'history-lines',type:'line',source:'history',filter:['all',line,notRail],layout:{'line-cap':'round','line-join':'round','line-sort-key':['get','order']},paint:{'line-color':match('fill','#ffffff'),'line-width':width(0),'line-opacity':['case',['get','tunnel'],.55,1]}},
-  {id:'history-rail',type:'line',source:'history',filter:['all',line,['==',['get','kind'],'rail']],paint:{'line-color':'#707070','line-width':width(0)}},
+  {id:'history-areas',type:'fill',source:'history',filter:['all',poly,['!',building],['!',landuse],['!=',['get','kind'],'water']],layout:{'fill-sort-key':['get','order']},paint:{'fill-color':match('fill','#f2efe9'),'fill-opacity':1}},
+  {id:'history-landuse',type:'fill',source:'history',minzoom:8,filter:['all',poly,landuse],paint:{'fill-color':match('fill','#e0dfdf')}},
+  {id:'history-landuse-outlines',type:'line',source:'history',minzoom:16,filter:['all',poly,landuse],paint:{'line-color':match('stroke','#b9b9b9'),'line-width':.5}},
+  {id:'history-waterareas',type:'fill',source:'history',filter:['all',poly,['==',['get','kind'],'water']],paint:{'fill-color':'#aad3df'}},
+  {id:'history-buildings',type:'fill',source:'history',minzoom:14,filter:['all',poly,building],paint:{'fill-color':['step',['zoom'],'#d1c6bd',15,'#d9d0c9']}},
+  {id:'history-area-outlines',type:'line',source:'history',minzoom:15,filter:['all',poly,building],paint:{'line-color':'#b9a99c','line-width':.75}},
+  {id:'history-waterlines',type:'line',source:'history',minzoom:8,filter:['all',line,water],layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':'#aad3df','line-width':waterWidth()}},
+  {id:'history-line-casings',type:'line',source:'history',minzoom:6,filter:['all',line,road],layout:{'line-cap':'round','line-join':'round','line-sort-key':['get','order']},paint:{'line-color':colors('stroke'),'line-width':roadWidth('full'),'line-opacity':['case',['get','tunnel'],.55,1]}},
+  {id:'history-lines',type:'line',source:'history',minzoom:6,filter:['all',line,road],layout:{'line-cap':'round','line-join':'round','line-sort-key':['get','order']},paint:{'line-color':colors('fill'),'line-width':roadWidth('fill'),'line-opacity':['case',['get','tunnel'],.55,1]}},
+  {id:'history-footway-background',type:'line',source:'history',minzoom:14,filter:['all',line,['==',['get','kind'],'footway']],layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':'#ffffff','line-width':['step',['zoom'],2.7,15,3,16,3.3,19,3.6]}},
+  {id:'history-footway',type:'line',source:'history',minzoom:14,filter:['all',line,['==',['get','kind'],'footway']],layout:{'line-cap':'butt','line-join':'round'},paint:{'line-color':'#fa8072','line-width':['step',['zoom'],.7,15,1,16,1.3,19,1.6],'line-dasharray':[1,3]}},
+  {id:'history-rail',type:'line',source:'history',minzoom:8,filter:['all',line,['==',['get','kind'],'rail']],paint:{'line-color':'#707070','line-width':width(0)}},
   {id:'history-rail-sleepers',type:'line',source:'history',minzoom:13,filter:['all',line,['==',['get','kind'],'rail']],paint:{'line-color':'#ffffff','line-width':['interpolate',['linear'],['zoom'],13,.6,17,1.4,20,3],'line-dasharray':[4,4]}},
-  {id:'history-bridge-casing',type:'line',source:'history',filter:['all',line,road,['==',['get','bridge'],true]],layout:{'line-cap':'butt','line-join':'round'},paint:{'line-color':'#333333','line-width':width(3)}},
-  {id:'history-bridge-fill',type:'line',source:'history',filter:['all',line,road,['==',['get','bridge'],true]],layout:{'line-cap':'butt','line-join':'round'},paint:{'line-color':match('fill','#ffffff'),'line-width':width(0)}},
-  {id:'history-line-names',type:'symbol',source:'history',minzoom:12,filter:line,layout:{'symbol-placement':'line','text-field':['get','name'],'text-font':font,'text-size':['interpolate',['linear'],['zoom'],12,11,18,14],'symbol-spacing':250},paint:{'text-color':['case',['in',['get','kind'],['literal',['river','canal','stream']]],'#4d80b3','#333333'],'text-halo-color':'#ffffff','text-halo-width':1.5}},
-  {id:'history-area-names',type:'symbol',source:'history',minzoom:13,filter:poly,layout:{'text-field':['get','name'],'text-font':font,'text-size':12,'text-max-width':8},paint:{'text-color':'#555555','text-halo-color':'#ffffff','text-halo-width':1}},
-  {id:'history-points',type:'circle',source:'history',filter:point,paint:{'circle-color':match('fill','#333333'),'circle-radius':['case',['==',['get','kind'],'station'],4,2.5],'circle-stroke-color':'#ffffff','circle-stroke-width':1}},
-  {id:'history-point-names',type:'symbol',source:'history',filter:point,layout:{'text-field':['get','name'],'text-font':font,'text-size':14,'text-anchor':'top','text-offset':[0,.6]},paint:{'text-color':'#333333','text-halo-color':'#ffffff','text-halo-width':1.8}},
+  {id:'history-bridge-casing',type:'line',source:'history',minzoom:13,filter:['all',line,road,['==',['get','bridge'],true]],layout:{'line-cap':'butt','line-join':'round'},paint:{'line-color':'#000000','line-width':roadWidth('full')}},
+  {id:'history-bridge-fill',type:'line',source:'history',minzoom:13,filter:['all',line,road,['==',['get','bridge'],true]],layout:{'line-cap':'butt','line-join':'round'},paint:{'line-color':match('fill','#ffffff'),'line-width':roadWidth('bridge-fill')}},
+  {id:'history-line-names',type:'symbol',source:'history',minzoom:13,filter:['all',line,road],layout:{'symbol-placement':'line','text-field':namesFromZoom({motorway:13,trunk:13,primary:13,secondary:13,tertiary:14,residential:16,service:17}),'text-font':font,'text-size':['step',['zoom'],8,14,9,15,['case',['in',['get','kind'],['literal',['motorway','trunk','primary','secondary']]],10,9],17,['case',['==',['get','kind'],'service'],9,11],19,['case',['==',['get','kind'],'service'],11,12]],'text-max-angle':30,'symbol-spacing':300},paint:{'text-color':'#000000','text-halo-color':match('fill','#ffffff'),'text-halo-width':.75}},
+  {id:'history-water-names',type:'symbol',source:'history',minzoom:13,filter:['all',line,water],layout:{'symbol-placement':'line','text-field':namesFromZoom({river:13,canal:13,stream:15}),'text-font':font,'text-size':['step',['zoom'],10,14,['case',['==',['get','kind'],'stream'],10,12]],'text-max-angle':30,'symbol-spacing':200},paint:{'text-color':'#4d80b3','text-halo-color':'#ffffff','text-halo-width':.75}},
+  {id:'history-area-names',type:'symbol',source:'history',minzoom:13,filter:['all',poly,['!',building]],layout:{'text-field':['get','name'],'text-font':font,'text-size':['step',['zoom'],10,15,12],'text-max-width':8,'text-padding':3},paint:{'text-color':['match',['get','kind'],'water','#4d80b3','forest','#46673b','park','#228b22','#666666'],'text-halo-color':'#ffffff','text-halo-width':.75}},
+  {id:'history-building-names',type:'symbol',source:'history',minzoom:17,filter:['all',poly,building],layout:{'text-field':['get','name'],'text-font':font,'text-size':10,'text-max-width':7,'text-padding':3},paint:{'text-color':'#555555','text-halo-color':'#ffffff','text-halo-width':.5}},
+  {id:'history-points',type:'circle',source:'history',minzoom:13,filter:['all',point,['==',['get','kind'],'station']],paint:{'circle-color':'#7981b0','circle-radius':3,'circle-stroke-color':'#ffffff','circle-stroke-width':1}},
+  {id:'history-point-names',type:'symbol',source:'history',minzoom:11,filter:point,layout:{'text-field':['get','name'],'text-font':font,'text-size':['step',['zoom'],10,13,11,15,13,17,14],'text-anchor':['case',['==',['get','kind'],'station'],'top','center'],'text-offset':['case',['==',['get','kind'],'station'],['literal',[0,.6]],['literal',[0,0]]],'text-padding':3,'symbol-sort-key':['case',['==',['get','kind'],'place'],0,1]},paint:{'text-color':['case',['==',['get','kind'],'station'],'#7981b0','#333333'],'text-halo-color':'#ffffff','text-halo-width':1}},
   {id:'history-selected-line',type:'line',source:'selection',filter:['!=',['geometry-type'],'Point'],paint:{'line-color':'#1463ce','line-width':3,'line-dasharray':[2,2]}},
   {id:'history-selected-point',type:'circle',source:'selection',filter:point,paint:{'circle-color':'#1463ce','circle-radius':9,'circle-opacity':.25}},
   {id:'history-draft-fill',type:'fill',source:'draft',filter:poly,paint:{'fill-color':'#1463ce','fill-opacity':.16}},
@@ -37,7 +47,10 @@ export function historyStyle(){
   {id:'history-draft-points',type:'circle',source:'draft',filter:point,paint:{'circle-radius':4,'circle-color':'#ffffff','circle-stroke-color':'#1463ce','circle-stroke-width':2}}
  ];
  // The contemporary map can be seen even inside an already painted area.
- const reference=layers.splice(4,2);layers.splice(layers.findIndex(l=>l.id==='history-selected-line'),0,...reference);
+ const reference=layers.filter(l=>l.id==='reference-osm'||l.id==='reference-satellite');for(const l of reference)layers.splice(layers.indexOf(l),1);layers.splice(layers.findIndex(l=>l.id==='history-selected-line'),0,...reference);
+ // These layers above are written in upstream Carto zooms. Editing overlays
+ // and the existing railway implementation already use MapLibre camera zooms.
+ for(let i=0;i<layers.length;i++)if(layers[i].id==='natural-waterways'||(layers[i].id.startsWith('history-')&&!/^history-(rail|selected|draft)/.test(layers[i].id)))layers[i]=cartoCameraLayer(layers[i]);
  return {version:8,glyphs:'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',sources:{
   nature:{type:'vector',url:NATURAL_SOURCE,attribution:'<a href="https://openfreemap.org/" target="_blank">OpenFreeMap</a> · <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> · © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'},
   reference:{type:'raster',tiles:[OSM_REFERENCE],tileSize:256,maxzoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'},
