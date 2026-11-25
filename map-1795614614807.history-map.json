@@ -1940,14 +1940,41 @@
           30.5691887747045
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-36e4deec-075c-401e-b121-5f1b634c79f6",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "咸寧碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "ferry": "yes",
+          "name": "咸寧碼頭",
+          "addr:*": "yes",
+          "amenity": "ferry_terminal"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2822209743116,
+          30.568977454089406
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:04:40.923Z",
+  "updatedAt": "2026-11-25T15:06:42.472Z",
   "view": {
     "center": [
-      114.27883620424075,
-      30.56961292928979
+      114.28210529206399,
+      30.571955372175807
     ],
-    "zoom": 17.311973534299298
+    "zoom": 15.262435684735182
   }
 }
