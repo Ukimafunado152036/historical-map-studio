@@ -1854,7 +1854,41 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-dac56343-fc5d-42b0-a426-6bff5319cef8",
+      "properties": {
+        "kind": "residential",
+        "name": "丁古角",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.8628087561192,
+            32.019835116455624
+          ],
+          [
+            120.86320031998127,
+            32.018397986826855
+          ],
+          [
+            120.86345662364334,
+            32.01772069915195
+          ],
+          [
+            120.8638845246843,
+            32.016237051288556
+          ]
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T04:43:04.884Z"
+  "updatedAt": "2026-11-25T04:44:24.830Z"
 }
