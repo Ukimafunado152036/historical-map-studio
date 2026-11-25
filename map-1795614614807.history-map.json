@@ -1920,15 +1920,17 @@
       "type": "Feature",
       "id": "map-d365a142-bfdb-449e-8469-e277fdc86505",
       "properties": {
-        "kind": "generic_point",
+        "kind": "ferry_terminal",
         "name": "",
         "visible": true,
         "widthScale": 1,
         "bridge": false,
         "tunnel": false,
         "notes": "",
-        "tags": {},
-        "presetId": ""
+        "tags": {
+          "amenity": "ferry_terminal"
+        },
+        "presetId": "amenity/ferry_terminal"
       },
       "geometry": {
         "type": "Point",
@@ -1939,7 +1941,7 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T15:03:55.243Z",
+  "updatedAt": "2026-11-25T15:04:17.148Z",
   "view": {
     "center": [
       114.27883620424075,
