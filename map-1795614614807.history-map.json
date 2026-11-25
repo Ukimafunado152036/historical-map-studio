@@ -1915,14 +1915,36 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-d365a142-bfdb-449e-8469-e277fdc86505",
+      "properties": {
+        "kind": "generic_point",
+        "name": "",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {},
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.27884052548961,
+          30.5691887747045
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:01:51.386Z",
+  "updatedAt": "2026-11-25T15:03:55.243Z",
   "view": {
     "center": [
-      114.274627644823,
-      30.571508080423953
+      114.27883620424075,
+      30.56961292928979
     ],
-    "zoom": 14.2837297729362
+    "zoom": 17.311973534299298
   }
 }
