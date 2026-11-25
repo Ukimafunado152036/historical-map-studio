@@ -1888,7 +1888,37 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-dceb9bed-4008-4ba3-84b5-b993ca084387",
+      "properties": {
+        "kind": "residential",
+        "name": "馬房角",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.8628087561192,
+            32.019835116455624
+          ],
+          [
+            120.86263841610435,
+            32.020301121264595
+          ],
+          [
+            120.86236839840336,
+            32.021424988309576
+          ]
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T04:44:24.830Z"
+  "updatedAt": "2026-11-25T04:45:17.488Z"
 }
