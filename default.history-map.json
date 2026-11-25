@@ -2913,13 +2913,18 @@
       "type": "Feature",
       "id": "map-8808e297-309d-44c1-b4aa-d5a4a442c2e1",
       "properties": {
-        "kind": "place",
+        "kind": "city_gate",
         "name": "江山門",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1
+        "widthScale": 1,
+        "tags": {
+          "name": "江山門",
+          "historic": "city_gate"
+        },
+        "presetId": ""
       },
       "geometry": {
         "type": "Point",
@@ -3562,12 +3567,12 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T13:39:51.919Z",
+  "updatedAt": "2026-11-25T13:41:28.412Z",
   "view": {
     "center": [
-      120.85934079178287,
-      32.020604772332305
+      120.8617853438002,
+      32.015985710790815
     ],
-    "zoom": 16.05902025742543
+    "zoom": 17.439288145886326
   }
 }
