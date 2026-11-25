@@ -1622,13 +1622,18 @@
       "type": "Feature",
       "id": "map-abb5ac5c-a323-4ba6-b172-1f2ef50e1944",
       "properties": {
-        "kind": "building",
+        "kind": "military",
         "name": "南通縣政府",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1
+        "widthScale": 1,
+        "tags": {
+          "name": "南通縣政府",
+          "landuse": "military"
+        },
+        "presetId": ""
       },
       "geometry": {
         "type": "Polygon",
@@ -3491,14 +3496,15 @@
       "id": "map-0bc2f049-cdde-4934-8b08-7d90aaa19185",
       "properties": {
         "kind": "generic_area",
-        "name": "",
+        "name": "通海中學校",
         "visible": true,
         "widthScale": 1,
         "bridge": false,
         "tunnel": false,
         "notes": "",
         "tags": {
-          "amenity": "college"
+          "amenity": "college",
+          "name": "通海中學校"
         },
         "presetId": "amenity/college"
       },
@@ -3551,12 +3557,12 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T13:38:13.951Z",
+  "updatedAt": "2026-11-25T13:39:23.839Z",
   "view": {
     "center": [
-      120.85965488610395,
-      32.023060152807645
+      120.85951704892898,
+      32.022688502022305
     ],
-    "zoom": 16.361844633561713
+    "zoom": 15.31951751293214
   }
 }
