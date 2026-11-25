@@ -2467,14 +2467,39 @@
           30.5800948303352
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-2275d4ac-cab1-45e3-a46d-5510fa79ae84",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "五碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "五碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2954119083148,
+          30.58447980701797
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:23:01.132Z",
+  "updatedAt": "2026-11-25T15:23:36.580Z",
   "view": {
     "center": [
-      114.29215258994236,
-      30.581139589411563
+      114.29136243519838,
+      30.58524461383736
     ],
-    "zoom": 16.491291385128044
+    "zoom": 16.054613016771068
   }
 }
