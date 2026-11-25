@@ -14,7 +14,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1.75,
+        "widthScale": 1.5,
         "cornerRadius": 30
       },
       "geometry": {
@@ -41,7 +41,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1.75,
+        "widthScale": 1.5,
         "cornerRadius": 30
       },
       "geometry": {
@@ -72,7 +72,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1.75,
+        "widthScale": 1.5,
         "cornerRadius": 300
       },
       "geometry": {
@@ -151,7 +151,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1.5,
+        "widthScale": 1.25,
         "cornerRadius": 300
       },
       "geometry": {
@@ -206,7 +206,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1.5,
+        "widthScale": 1.25,
         "cornerRadius": 300
       },
       "geometry": {
@@ -245,7 +245,7 @@
         "visible": true,
         "bridge": true,
         "tunnel": false,
-        "widthScale": 1.5,
+        "widthScale": 1.25,
         "cornerRadius": 300
       },
       "geometry": {
@@ -276,7 +276,7 @@
         "visible": true,
         "bridge": true,
         "tunnel": false,
-        "widthScale": 1.5,
+        "widthScale": 1.25,
         "cornerRadius": 300
       },
       "geometry": {
@@ -1140,7 +1140,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1.25,
+        "widthScale": 1,
         "cornerRadius": 30
       },
       "geometry": {
@@ -1183,7 +1183,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1.25,
+        "widthScale": 1,
         "cornerRadius": 300
       },
       "geometry": {
@@ -1451,7 +1451,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 0.75,
+        "widthScale": 1,
         "cornerRadius": 10
       },
       "geometry": {
@@ -1478,7 +1478,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 0.75,
+        "widthScale": 1,
         "cornerRadius": 10
       },
       "geometry": {
@@ -1668,7 +1668,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 0.75,
+        "widthScale": 1,
         "cornerRadius": 10
       },
       "geometry": {
@@ -1707,7 +1707,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1,
+        "widthScale": 1.25,
         "cornerRadius": 10
       },
       "geometry": {
@@ -1742,7 +1742,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1,
+        "widthScale": 1.25,
         "cornerRadius": 10
       },
       "geometry": {
@@ -1782,7 +1782,33 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-751edb6f-48b0-44eb-b1ee-68a4fde73f83",
+      "properties": {
+        "kind": "residential",
+        "name": "富貴巷",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1.25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.86155537481318,
+            32.02129977776046
+          ],
+          [
+            120.864295974031,
+            32.021757204297245
+          ]
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T04:34:05.128Z"
+  "updatedAt": "2026-11-25T04:36:00.140Z"
 }
