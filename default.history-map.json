@@ -9,12 +9,12 @@
       "id": "map-9a36bce9-5ccc-4b2a-924d-9aedf0908713",
       "properties": {
         "kind": "trunk",
-        "name": "",
+        "name": "西大街",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1.5,
+        "widthScale": 1.75,
         "cornerRadius": 30
       },
       "geometry": {
@@ -30,7 +30,38 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-50958798-25f1-4192-8aef-b1eb0563924b",
+      "properties": {
+        "kind": "trunk",
+        "name": "東大街",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1.75,
+        "cornerRadius": 30
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.86074633530586,
+            32.01945195716377
+          ],
+          [
+            120.86267137023867,
+            32.01983156667886
+          ],
+          [
+            120.86577502033862,
+            32.02038628529549
+          ]
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T03:04:28.819Z"
+  "updatedAt": "2026-11-25T03:23:23.632Z"
 }
