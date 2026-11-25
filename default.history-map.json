@@ -2225,7 +2225,41 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-433fc248-f05b-46b6-b1ab-baef9a53f834",
+      "properties": {
+        "kind": "residential",
+        "name": "小巷",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.85902351435647,
+            32.02055425670946
+          ],
+          [
+            120.85947102871751,
+            32.020638385842645
+          ],
+          [
+            120.85964227565864,
+            32.019869523279525
+          ],
+          [
+            120.86058326328714,
+            32.02002460892572
+          ]
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T05:11:22.622Z"
+  "updatedAt": "2026-11-25T05:12:54.170Z"
 }
