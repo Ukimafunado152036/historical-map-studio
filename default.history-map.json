@@ -1573,7 +1573,27 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-84f2aa80-f634-45eb-a670-376f7e0726cd",
+      "properties": {
+        "kind": "place",
+        "name": "",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.86086384590544,
+          32.021587937549725
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T04:22:55.072Z"
+  "updatedAt": "2026-11-25T04:23:38.576Z"
 }
