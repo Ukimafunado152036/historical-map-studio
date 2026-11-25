@@ -3,6 +3,34 @@
   "version": 1,
   "title": "我的历史地图",
   "year": "",
-  "features": [],
-  "updatedAt": "2026-11-24T15:00:31.619Z"
+  "features": [
+    {
+      "type": "Feature",
+      "id": "map-9a36bce9-5ccc-4b2a-924d-9aedf0908713",
+      "properties": {
+        "kind": "trunk",
+        "name": "",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1.5,
+        "cornerRadius": 30
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.86072420667915,
+            32.0194497869209
+          ],
+          [
+            120.8566623963963,
+            32.0186701599485
+          ]
+        ]
+      }
+    }
+  ],
+  "updatedAt": "2026-11-25T03:04:28.819Z"
 }
