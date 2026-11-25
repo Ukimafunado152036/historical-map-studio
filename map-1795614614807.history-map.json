@@ -700,7 +700,7 @@
       "id": "map-2c9cf84e-8925-4ec6-83c8-e9afda1688de",
       "properties": {
         "kind": "generic_point",
-        "name": "",
+        "name": "銅人像",
         "visible": true,
         "widthScale": 1,
         "bridge": false,
@@ -709,7 +709,8 @@
         "tags": {
           "religion": "buddhist",
           "tourism": "artwork",
-          "artwork_type": "statue"
+          "artwork_type": "statue",
+          "name": "銅人像"
         },
         "presetId": "tourism/artwork/statue"
       },
@@ -722,12 +723,12 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T14:19:47.498Z",
+  "updatedAt": "2026-11-25T14:20:09.448Z",
   "view": {
     "center": [
-      114.28015387450432,
-      30.574829987076868
+      114.28009203661634,
+      30.574865251742793
     ],
-    "zoom": 17.630079578452012
+    "zoom": 20
   }
 }
