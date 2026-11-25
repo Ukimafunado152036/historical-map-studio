@@ -2220,13 +2220,18 @@
       "type": "Feature",
       "id": "map-0a017f43-f879-4f76-8a4b-821d62e3154a",
       "properties": {
-        "kind": "building",
+        "kind": "commercial",
         "name": "勸工場",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1
+        "widthScale": 1,
+        "tags": {
+          "name": "勸工場",
+          "landuse": "commercial"
+        },
+        "presetId": ""
       },
       "geometry": {
         "type": "Polygon",
@@ -3557,12 +3562,12 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T13:39:44.234Z",
+  "updatedAt": "2026-11-25T13:39:51.919Z",
   "view": {
     "center": [
-      120.8607731804841,
-      32.0215934992662
+      120.85934079178287,
+      32.020604772332305
     ],
-    "zoom": 16.361844633561734
+    "zoom": 16.05902025742543
   }
 }
