@@ -2095,7 +2095,38 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-95ecb11c-5b66-4c94-89cc-be36aafc50a1",
+      "properties": {
+        "kind": "residential",
+        "name": "田家巷",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1,
+        "cornerRadius": 30
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            120.85810140458841,
+            32.018342442596065
+          ],
+          [
+            120.85825068132903,
+            32.01757988295631
+          ],
+          [
+            120.85830969712651,
+            32.01720138506529
+          ]
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T05:02:50.423Z"
+  "updatedAt": "2026-11-25T05:03:46.776Z"
 }
