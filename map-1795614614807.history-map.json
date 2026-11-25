@@ -2642,14 +2642,38 @@
           30.584053567524435
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-68e027f5-40dc-4991-89ce-ce36ed51e287",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2927711748498,
+          30.57807953271184
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:29:30.968Z",
+  "updatedAt": "2026-11-25T15:29:58.435Z",
   "view": {
     "center": [
-      114.29423404542263,
-      30.583705271184755
+      114.29175290534147,
+      30.57954641753146
     ],
-    "zoom": 16.82923215295937
+    "zoom": 16.089729408466084
   }
 }
