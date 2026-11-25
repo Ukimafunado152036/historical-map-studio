@@ -2023,14 +2023,15 @@
       "id": "map-1c969a5c-30e3-44c5-8f05-a22768230aa9",
       "properties": {
         "kind": "ferry_terminal",
-        "name": "",
+        "name": "大碼頭",
         "visible": true,
         "widthScale": 1,
         "bridge": false,
         "tunnel": false,
         "notes": "",
         "tags": {
-          "amenity": "ferry_terminal"
+          "amenity": "ferry_terminal",
+          "name": "大碼頭"
         },
         "presetId": ""
       },
@@ -2043,7 +2044,7 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T15:08:50.046Z",
+  "updatedAt": "2026-11-25T15:09:13.935Z",
   "view": {
     "center": [
       114.28393746768381,
