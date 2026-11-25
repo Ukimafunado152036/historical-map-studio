@@ -2042,14 +2042,39 @@
           30.56878721203968
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-a1661029-aaa9-40f6-b769-8c646dbcd7c4",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "鮑家巷碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "鮑家巷碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2803003338422,
+          30.569187707096916
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:09:13.935Z",
+  "updatedAt": "2026-11-25T15:09:44.136Z",
   "view": {
     "center": [
-      114.28393746768381,
-      30.569878485376677
+      114.28013530362875,
+      30.56983834402027
     ],
-    "zoom": 16.607587181501103
+    "zoom": 16.304762805364817
   }
 }
