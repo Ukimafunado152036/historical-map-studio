@@ -2567,14 +2567,64 @@
           30.58615721087395
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-9ff89f03-7e1d-4020-92dc-a36b0d7455b8",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "大阪滬漢躉船",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "大阪滬漢躉船"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29704008044177,
+          30.58792656252733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "map-54036f3b-01df-4281-8319-b61c92817c62",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "阜昌躉船",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "阜昌躉船"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2942003323015,
+          30.58216737756031
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:27:14.822Z",
+  "updatedAt": "2026-11-25T15:29:01.106Z",
   "view": {
     "center": [
-      114.29431361277784,
-      30.58693958123422
+      114.29385237238318,
+      30.582846063182345
     ],
-    "zoom": 15.61793464841414
+    "zoom": 16.980644341027524
   }
 }
