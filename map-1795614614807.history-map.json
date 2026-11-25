@@ -2338,8 +2338,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          114.29289972030051,
-          30.578845394101407
+          114.29285476766034,
+          30.578598929601696
         ]
       }
     },
@@ -2392,14 +2392,64 @@
           30.57666237757047
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-47f9baf9-395f-4008-9bfc-fb55e8ceb90e",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "三碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "三碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2938039090626,
+          30.581542589752033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "map-86b613db-a15f-4a1c-bb6f-c359a4f6ebfe",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "怡和碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "怡和碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.2928624000262,
+          30.579196884077447
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:21:07.631Z",
+  "updatedAt": "2026-11-25T15:22:20.032Z",
   "view": {
     "center": [
-      114.29012315795853,
-      30.57752176098397
+      114.29212206056263,
+      30.579656846549966
     ],
-    "zoom": 15.903200828702898
+    "zoom": 16.491291385128044
   }
 }
