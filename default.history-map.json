@@ -1135,13 +1135,13 @@
       "id": "map-9bdf4190-e08c-4ecb-99e6-3fb1b157b599",
       "properties": {
         "kind": "primary",
-        "name": "",
+        "name": "濠陽路",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
         "widthScale": 1.25,
-        "cornerRadius": 10
+        "cornerRadius": 30
       },
       "geometry": {
         "type": "LineString",
@@ -1174,5 +1174,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T03:51:22.653Z"
+  "updatedAt": "2026-11-25T03:51:49.249Z"
 }
