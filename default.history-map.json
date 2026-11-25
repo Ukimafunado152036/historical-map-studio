@@ -1177,12 +1177,12 @@
       "id": "map-2f4bfc54-a6e5-487f-9bb0-d2ff5345e28a",
       "properties": {
         "kind": "primary",
-        "name": "",
+        "name": "西南城脚",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1,
+        "widthScale": 0.85,
         "cornerRadius": 300
       },
       "geometry": {
@@ -1235,7 +1235,7 @@
         "name": "",
         "notes": "",
         "visible": true,
-        "bridge": false,
+        "bridge": true,
         "tunnel": false,
         "widthScale": 1.5,
         "cornerRadius": 300
@@ -1567,8 +1567,8 @@
             32.017092156981164
           ],
           [
-            120.85744177054863,
-            32.01698964342117
+            120.85745091637557,
+            32.01699182508118
           ]
         ]
       }
@@ -2261,5 +2261,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T05:12:54.170Z"
+  "updatedAt": "2026-11-25T05:15:09.327Z"
 }
