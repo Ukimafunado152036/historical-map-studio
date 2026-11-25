@@ -1,8 +1,15 @@
 {
   "app": "historical-map-studio",
   "version": 1,
-  "title": "新历史地图",
+  "title": "三鎮",
   "year": "",
   "features": [],
-  "updatedAt": "2026-11-25T13:50:14.807Z"
+  "updatedAt": "2026-11-25T13:50:49.500Z",
+  "view": {
+    "center": [
+      114.28603302974693,
+      30.559733067229317
+    ],
+    "zoom": 14.334127832647683
+  }
 }
