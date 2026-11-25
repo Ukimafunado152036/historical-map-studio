@@ -1967,7 +1967,7 @@
       "id": "map-4a5aa9f6-7fcd-4201-8808-51ab694da413",
       "properties": {
         "kind": "tertiary",
-        "name": "",
+        "name": "河東街",
         "notes": "",
         "visible": true,
         "bridge": false,
@@ -2002,5 +2002,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T04:59:40.618Z"
+  "updatedAt": "2026-11-25T05:00:03.307Z"
 }
