@@ -1139,7 +1139,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1,
+        "widthScale": 0.85,
         "cornerRadius": 30
       },
       "geometry": {
@@ -2363,5 +2363,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T05:19:05.096Z"
+  "updatedAt": "2026-11-25T05:19:24.860Z"
 }
