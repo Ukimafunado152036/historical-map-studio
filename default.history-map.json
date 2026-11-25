@@ -2873,7 +2873,27 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-8808e297-309d-44c1-b4aa-d5a4a442c2e1",
+      "properties": {
+        "kind": "place",
+        "name": "江山門",
+        "notes": "",
+        "visible": true,
+        "bridge": false,
+        "tunnel": false,
+        "widthScale": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          120.86182943624732,
+          32.015775711038856
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T06:28:16.550Z"
+  "updatedAt": "2026-11-25T06:30:05.615Z"
 }
