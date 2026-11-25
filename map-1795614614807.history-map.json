@@ -2317,14 +2317,89 @@
           30.572553604076163
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-9588c9cb-6cf7-426d-a2bf-7e2b8851a671",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "一碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "一碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29289972030051,
+          30.578845394101407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "map-9bff0ddb-6ea2-4bd3-b68f-6d6e6f524534",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "太古碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "太古碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29244078437677,
+          30.577758830930904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "map-2e335021-5ad1-47b9-b2ae-93f709d55203",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "熊家碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "熊家碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29189006126745,
+          30.57666237757047
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:19:37.792Z",
+  "updatedAt": "2026-11-25T15:21:07.631Z",
   "view": {
     "center": [
-      114.28986966037178,
-      30.573678393664906
+      114.29012315795853,
+      30.57752176098397
     ],
-    "zoom": 16.35743739290735
+    "zoom": 15.903200828702898
   }
 }
