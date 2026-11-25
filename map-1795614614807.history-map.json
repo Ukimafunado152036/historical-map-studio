@@ -694,9 +694,34 @@
           ]
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-2c9cf84e-8925-4ec6-83c8-e9afda1688de",
+      "properties": {
+        "kind": "temple",
+        "name": "",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "place_of_worship",
+          "religion": "buddhist"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.28011617542751,
+          30.574838481094517
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T14:18:30.781Z",
+  "updatedAt": "2026-11-25T14:19:00.691Z",
   "view": {
     "center": [
       114.28013159812895,
