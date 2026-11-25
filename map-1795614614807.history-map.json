@@ -1967,14 +1967,39 @@
           30.568977454089406
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "id": "map-268eb183-988e-444c-84cc-fd0be819063e",
+      "properties": {
+        "kind": "ferry_terminal",
+        "name": "龍王廟碼頭",
+        "visible": true,
+        "widthScale": 1,
+        "bridge": false,
+        "tunnel": false,
+        "notes": "",
+        "tags": {
+          "amenity": "ferry_terminal",
+          "name": "龍王廟碼頭"
+        },
+        "presetId": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.28643189238699,
+          30.56888136418523
+        ]
+      }
     }
   ],
-  "updatedAt": "2026-11-25T15:06:42.472Z",
+  "updatedAt": "2026-11-25T15:07:19.012Z",
   "view": {
     "center": [
-      114.28210529206399,
-      30.571955372175807
+      114.2853885956506,
+      30.569492027666655
     ],
-    "zoom": 15.262435684735182
+    "zoom": 17.061823745705553
   }
 }
