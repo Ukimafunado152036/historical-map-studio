@@ -685,8 +685,7 @@
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1,
-        "cornerRadius": 10
+        "widthScale": 1
       },
       "geometry": {
         "type": "Polygon",
@@ -1920,5 +1919,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T04:45:17.488Z"
+  "updatedAt": "2026-11-25T04:45:45.243Z"
 }
