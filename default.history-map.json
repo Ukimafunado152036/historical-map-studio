@@ -1663,12 +1663,12 @@
       "id": "map-90e4724f-9aed-4697-bae8-672c1feafec3",
       "properties": {
         "kind": "residential",
-        "name": "",
+        "name": "三衙墩巷",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1,
+        "widthScale": 0.75,
         "cornerRadius": 10
       },
       "geometry": {
@@ -1698,5 +1698,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T04:27:23.633Z"
+  "updatedAt": "2026-11-25T04:31:42.212Z"
 }
