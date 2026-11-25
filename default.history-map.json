@@ -1374,13 +1374,13 @@
       "type": "Feature",
       "id": "map-e5a125bc-6e7a-47fc-a846-4c69aa078434",
       "properties": {
-        "kind": "tertiary",
+        "kind": "residential",
         "name": "寺街",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1,
+        "widthScale": 1.25,
         "cornerRadius": 10
       },
       "geometry": {
@@ -1445,7 +1445,7 @@
       "type": "Feature",
       "id": "map-0de72278-c27e-41ff-bd9d-e1e2e7557b53",
       "properties": {
-        "kind": "tertiary",
+        "kind": "residential",
         "name": "惠民坊巷",
         "notes": "",
         "visible": true,
@@ -1472,7 +1472,7 @@
       "type": "Feature",
       "id": "map-92033292-7fb6-4377-bb0d-f88d0b0ab0e5",
       "properties": {
-        "kind": "tertiary",
+        "kind": "residential",
         "name": "惠民坊東巷",
         "notes": "",
         "visible": true,
@@ -1523,13 +1523,13 @@
       "type": "Feature",
       "id": "map-c68e193b-acdf-478a-aad1-18fb69ef5126",
       "properties": {
-        "kind": "tertiary",
+        "kind": "residential",
         "name": "掌印巷",
         "notes": "",
         "visible": true,
         "bridge": false,
         "tunnel": false,
-        "widthScale": 1,
+        "widthScale": 1.25,
         "cornerRadius": 100
       },
       "geometry": {
@@ -1659,5 +1659,5 @@
       }
     }
   ],
-  "updatedAt": "2026-11-25T04:25:03.187Z"
+  "updatedAt": "2026-11-25T04:26:24.036Z"
 }
